@@ -1,11 +1,14 @@
 import React from 'react';
 import './customBtn.styles.scss'
 
-function CustomBtn({children, ...OtherProps}) {
+function CustomBtn({children, isGoogleSignIn, ...otherProps}) {
     return (
-        <button className='custom-button' {...OtherProps}>
-            {children}
-        </button>
+        <button
+        className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`}
+        {...otherProps}
+      >
+        {children}
+      </button>
     )
 }
 
